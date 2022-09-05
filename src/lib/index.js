@@ -1,3 +1,3 @@
-import PtsCanvas from './index.svelte';
+import {default as PtsCanvas} from "./ptscanvas/PtsCanvas.svelte"
 
 export { PtsCanvas };

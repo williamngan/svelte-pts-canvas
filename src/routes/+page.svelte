@@ -1,11 +1,12 @@
-<script>
-  import PtsCanvas from "$lib/index.svelte";
+<script lang='ts'>
+  import PtsCanvas from "$lib/ptscanvas/PtsCanvas.svelte";
+  import type {CanvasForm, CanvasSpace } from "pts";
 
-  function handleAnimate( space, form, time, ftime) {
+  function handleAnimate( space:CanvasSpace, form: CanvasForm, time?:number, ftime?:number) {
     form.point( space.pointer, 10) ;
   }
 
-  function handleAction( space, form, type, px, py) {
+  function handleAction( space:CanvasSpace, form:CanvasForm, type:string, px:number, py:number) {
     if (type==='click') {
       console.log( type, px, py );
     }
