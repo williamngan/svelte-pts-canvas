@@ -2,7 +2,8 @@
 
   import { onMount, onDestroy } from "svelte";
   // @ts-ignore
-  import { Bound, CanvasForm, CanvasSpace, CanvasSpaceOptions, IPlayer } from "pts";
+  import { Bound, CanvasForm, CanvasSpace } from "pts";
+  import type { CanvasSpaceOptions, IPlayer } from "pts";
 
   export let name:string = '';
   export let style:any = {};
@@ -10,10 +11,10 @@
   export let touch:boolean = true;
   export let setup:CanvasSpaceOptions = {bgcolor: '#9ab', retina: true, resize: true};
   
-  export let onStart: (bound: Bound, space:CanvasSpace, form:CanvasForm) => void = undefined;
-  export let onAnimate: (space:CanvasSpace, form:CanvasForm, time?: number, ftime?: number) => void = undefined;
-  export let onResize: (space:CanvasSpace, form:CanvasForm, size?: Bound, evt?: Event) => void = undefined;
-  export let onAction: (space:CanvasSpace, form:CanvasForm, type: string, px: number, py: number, evt?:Event) => void = undefined;
+  export let onStart: undefined | ((bound: Bound, space:CanvasSpace, form:CanvasForm) => void) = undefined;
+  export let onAnimate: undefined | ((space:CanvasSpace, form:CanvasForm, time?: number, ftime?: number) => void) = undefined;
+  export let onResize: undefined | ((space:CanvasSpace, form:CanvasForm, size?: Bound, evt?: Event) => void) = undefined;
+  export let onAction: undefined | ((space:CanvasSpace, form:CanvasForm, type: string, px: number, py: number, evt?:Event) => void) = undefined;
   
   let space: CanvasSpace;
   let initialPlay: boolean = true;
@@ -24,10 +25,10 @@
     
     // if (player) player(space, form);
     const player:IPlayer = {
-      start: onStart ? ( b, s ) => onStart(b, space, form) : undefined,
-      animate: onAnimate ? (time, ftime) => onAnimate(space, form, time, ftime) : undefined,
-      action: onAction ? (type, px, py, evt) => onAction( space, form, type, px, py, evt) : undefined,
-      resize: onResize ? (bound, evt) => onResize( space, form, bound, evt) : undefined,
+      start: onStart ? ( bound:Bound, s:CanvasSpace ) => onStart && onStart(bound, space, form) : undefined,
+      animate: onAnimate ? (time?:number, ftime?:number) => onAnimate && onAnimate(space, form, time, ftime) : undefined,
+      action: onAction ? (type:string, px:number, py:number, evt: Event) => onAction && onAction( space, form, type, px, py, evt) : undefined,
+      resize: onResize ? (bound: Bound, evt: Event) => onResize && onResize( space, form, bound, evt) : undefined,
     };
 
     if (onAnimate) {

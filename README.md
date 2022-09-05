@@ -9,7 +9,7 @@ npm install svelte-pts-canvas
 
 ## Usage
 ```js
-import PtsCanvas from 'svelte-pts-canvas';
+import { PtsCanvas } from 'svelte-pts-canvas';
 
 // ...
 
@@ -21,9 +21,5 @@ This is experimental. Take a look at the example in `src/routes/index.svelte`
 ## Developement
 
 ```js
-npm run package
-
-cd package
-npm publish
-
+npm run build
 ```
