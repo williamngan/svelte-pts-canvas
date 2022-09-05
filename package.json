@@ -1,6 +1,6 @@
 {
   "name": "svelte-pts-canvas",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
@@ -25,6 +25,16 @@
   },
   "type": "module",
   "dependencies": {
-    "pts": "^0.10.9"
-  }
+    "pts": "^0.10.12"
+  },
+  "author": {
+    "name": "William Ngan",
+    "url": "https://williamngan.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/williamngan/svelte-pts-canvas.git"
+  },
+  "homepage": "https://github.com/williamngan/svelte-pts-canvas",
+  "license": "Apache-2.0"
 }

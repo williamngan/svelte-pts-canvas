@@ -1,8 +1,8 @@
 <script lang="ts">
 
   import { onMount, onDestroy } from "svelte";
-  import { Bound, CanvasForm, CanvasSpace } from "pts";
-  import type {CanvasSpaceOptions, IPlayer} from "pts";
+  // @ts-ignore
+  import { Bound, CanvasForm, CanvasSpace, CanvasSpaceOptions, IPlayer } from "pts";
 
   export let name:string = '';
   export let style:any = {};
