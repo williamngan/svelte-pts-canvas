@@ -1,6 +1,6 @@
 # svelte-pts-canvas
 
-A Svelte component for Pts (https://ptsjs.org)[https://ptsjs.org].
+A Svelte component for the [Pts](https://ptsjs.org) library.
 
 ## Installation
 ```bash
