@@ -22,4 +22,8 @@ This is experimental. Take a look at the example in `src/routes/index.svelte`
 
 ```js
 npm run build
+
+// IMPORTANT to change directory before publish
+cd package
+npm publish
 ```
