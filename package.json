@@ -19,9 +19,6 @@
 		"vite": "^3.1.0-beta.1"
 	},
 	"type": "module",
-	"dependencies": {
-		"pts": "^0.10.12"
-	},
 	"author": {
 		"name": "William Ngan",
 		"url": "https://williamngan.com"
@@ -31,5 +28,8 @@
 		"url": "https://github.com/williamngan/svelte-pts-canvas.git"
 	},
 	"homepage": "https://github.com/williamngan/svelte-pts-canvas",
-	"license": "Apache-2.0"
+	"license": "Apache-2.0",
+	"dependencies": {
+		"pts": "^0.11.1"
+	}
 }
